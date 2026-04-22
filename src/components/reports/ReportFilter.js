@@ -8,7 +8,7 @@ export default function ReportFilter() {
                     <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Report Architecture</label>
                     <select className="input-field" defaultValue="rent_roll" style={{ background: 'rgba(15, 23, 42, 0.8)' }}>
                         <option value="rent_roll">Detailed Rent Roll Analysis</option>
-                        <option value="profit_loss">Profit & Loss (P&L) Statement</option>
+                        <option value="profit_loss">Property-Level P&L Insights</option>
                         <option value="arrears">Arrears & Collections Ledger</option>
                         <option value="vacancy">Vacancy Variance Audit</option>
                     </select>
@@ -21,6 +21,15 @@ export default function ReportFilter() {
                         <option value="bmg_1">BMG Tower 1</option>
                         <option value="gn_heights">GN Heights Residential</option>
                         <option value="new_dev">Phase II (29-Floor Dev)</option>
+                    </select>
+                </div>
+
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                    <label style={{ fontSize: '0.85rem', color: 'var(--text-secondary)' }}>Insight Depth</label>
+                    <select className="input-field" defaultValue="property" style={{ background: 'rgba(15, 23, 42, 0.8)' }}>
+                        <option value="property">Property-Level Summary</option>
+                        <option value="unit">Unit-Level Drilldown</option>
+                        <option value="tenant">Tenant Payment History</option>
                     </select>
                 </div>
 
