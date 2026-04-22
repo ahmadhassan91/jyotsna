@@ -1,7 +1,9 @@
 "use client";
 import { useState } from 'react';
+import { useRouter } from 'next/navigation';
 
 export default function ActionPanel() {
+  const router = useRouter();
   const [workflowState, setWorkflowState] = useState('idle');
 
   const simulateWorkflow = () => {
@@ -44,6 +46,7 @@ export default function ActionPanel() {
                     <h4 style={{ fontSize: '1rem', fontWeight: 600, color: '#fff', letterSpacing: '0.025em', marginBottom: '4px' }}>Unbilled Parking Fees</h4>
                     <p style={{ fontSize: '0.875rem', color: 'var(--text-secondary)', lineHeight: 1.6, marginBottom: '16px' }}>Yardi discrepancy found on 3 accounts</p>
                     <button 
+                        onClick={() => router.push('/reports')}
                         style={{ cursor: 'pointer', display: 'block', width: 'fit-content', padding: '8px 24px', background: 'rgba(255,255,255,0.05)', border: '1px solid rgba(255,255,255,0.1)', color: '#cbd5e1', borderRadius: '8px', fontSize: '0.875rem', fontWeight: 500, transition: 'color 0.2s, background 0.2s' }}
                         onMouseOver={e => { e.currentTarget.style.color = '#fff'; e.currentTarget.style.background = 'rgba(255,255,255,0.1)'; }}
                         onMouseOut={e => { e.currentTarget.style.color = '#cbd5e1'; e.currentTarget.style.background = 'rgba(255,255,255,0.05)'; }}

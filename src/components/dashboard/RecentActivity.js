@@ -1,6 +1,8 @@
 "use client";
+import { useRouter } from 'next/navigation';
 
 export default function RecentActivity() {
+    const router = useRouter();
     const activities = [
         { id: 'TRX-1092', user: 'Michael Smith', action: 'Rent Payment - Aug 2026', unit: 'Unit 402', amount: '+$1,850.00', status: 'Cleared', date: 'Today, 09:42 AM' },
         { id: 'TRX-1091', user: 'System', action: 'Late Fee Assessed', unit: 'Unit 201', amount: '+$50.00', status: 'Pending', date: 'Yesterday, 11:00 PM' },
@@ -13,7 +15,10 @@ export default function RecentActivity() {
         <div className="glass-panel" style={{ marginTop: '24px', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
             <div style={{ padding: '24px 32px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', borderBottom: '1px solid var(--panel-border)', background: 'linear-gradient(to right, rgba(255,255,255,0.02), transparent)' }}>
                 <h3 style={{ fontSize: '1.25rem', fontWeight: 500, color: '#fff', letterSpacing: '0.025em', margin: 0 }}>Recent Financial Activity</h3>
-                <button style={{ color: 'var(--accent)', fontSize: '0.875rem', fontWeight: 500, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}>
+                <button 
+                    onClick={() => router.push('/reports')}
+                    style={{ color: 'var(--accent)', fontSize: '0.875rem', fontWeight: 500, background: 'transparent', border: 'none', display: 'flex', alignItems: 'center', gap: '4px', cursor: 'pointer' }}
+                >
                     View All Register
                     <svg style={{ width: '16px', height: '16px' }} fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7"></path></svg>
                 </button>
